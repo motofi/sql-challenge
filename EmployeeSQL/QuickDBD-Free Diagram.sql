@@ -1,11 +1,4 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- Link to schema: https://app.quickdatabasediagrams.com/#/d/enebKv
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
--- Modify this code to update the DB schema diagram.
--- To reset the sample schema, replace everything with
--- two dots ('..' - without quotes).
-
+﻿
 CREATE TABLE "titles" (
     "emp_no" int   NOT NULL,
     "title" VARCHAR   NOT NULL,
@@ -18,7 +11,6 @@ CREATE TABLE "titles" (
 
 CREATE TABLE "salaries" (
     "emp_no" int   NOT NULL,
-    -- FK >- Customer.CustomerID
     "salary" money   NOT NULL,
     "from_date" date   NOT NULL,
     -- FK >- os.OrderStatusID
@@ -30,9 +22,7 @@ CREATE TABLE "salaries" (
 
 CREATE TABLE "employees" (
     "emp_no" int   NOT NULL,
-    -- FK >- Order.OrderID
     "birth_date" date   NOT NULL,
-    -- FK >- p.ProductID
     "first_name" VARCHAR   NOT NULL,
     "last_name" VARCHAR   NOT NULL,
     "gender" VARCHAR   NOT NULL,
@@ -52,11 +42,8 @@ CREATE TABLE "dept_manager" (
      )
 );
 
--- Table documentation comment 1 (try the PDF/RTF export)
 CREATE TABLE "dept_emp" (
     "emp_no" int   NOT NULL,
-    -- Field documentation comment 1
-    -- Field documentation comment 2
     "dept_no" int   NOT NULL,
     "from_date" date   NOT NULL,
     "to_date" date   NOT NULL,
@@ -93,4 +80,3 @@ REFERENCES "departments" ("dept_no");
 
 CREATE INDEX "idx_titles_title"
 ON "titles" ("title");
-
