@@ -1,8 +1,9 @@
 -- 1. List the following details of each employee: employee number, last name, first name, gender, and salary.
 
-SELECT * FROM employees;
-last_name, first_name, emp_no, gender FROM employees
-salary FROM salaries
+SELECT e.last_name, e.first_name, e.emp_no, e.gender, s.salary
+FROM salaries as s
+INNER JOIN employees AS e
+ON e.emp_no = s.emp_no;
 
 -- -- 2. List employees who were hired in 1986.
 
