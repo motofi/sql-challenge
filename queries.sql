@@ -15,11 +15,11 @@ hire_date <= '1986-12-31';
 -- first name, and start and end employment dates.
 
 SELECT dm.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name, dm.from_date, dm.to_date
-FROM dept_manager AS dm
-INNER JOIN department AS d
-  ON d.dept_no = dm.dept_no;
-INNER JOIN employees as e
-  ON dm.emp_no = e.emp_no;
+  FROM employees AS e
+    JOIN dept_manager AS dm
+    ON (dm.emp_no = e.emp_no)
+      JOIN department as d
+      ON (d.dept_no = dm.dept_no);
 
 -- -- 4. List the department of each employee with the following information:
 -- employee number, last name, first name, and department name.
