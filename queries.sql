@@ -6,6 +6,9 @@ INNER JOIN employees AS e
 ON e.emp_no = s.emp_no;
 
 -- -- 2. List employees who were hired in 1986.
+SELECT * FROM employees
+WHERE hire_date >= '1986-01-01'and
+hire_date <= '1986-12-31';
 
 -- -- 3. List the manager of each department with the following information:
 -- department number, department name, the manager's employee number, last name,
